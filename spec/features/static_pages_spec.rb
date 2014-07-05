@@ -1,18 +1,39 @@
 require 'rails_helper'
 
 feature "StaticPages" do
-  scenario "User show home pages" do
-    visit '/static_pages/home'
-    expect(page).to have_content('Sample App')
+  feature "Home page" do
+    scenario "right title" do
+      visit '/static_pages/home'
+      expect(page).to have_title("Ruby on Rails Tutorial Sample App | Home")
+    end
+
+    scenario "right content" do
+      visit '/static_pages/home'
+      expect(page).to have_content('Sample App')
+    end
   end
 
-  scenario "User show help page" do
-    visit "/static_pages/help"
-    expect(page).to have_content('Help')
+  feature "Help page" do
+    scenario "right title" do
+      visit "/static_pages/help"
+      expect(page).to have_title("Ruby on Rails Tutorial Sample App | Help")
+    end
+
+    scenario "right content" do
+      visit "/static_pages/help"
+      expect(page).to have_content('Help')
+    end
   end
 
-  scenario "User show about page" do
-    visit "/static_pages/about"
-    expect(page).to have_content('About Us')
+  feature "About page" do
+    scenario "right title" do
+      visit "/static_pages/about"
+      expect(page).to have_title("Ruby on Rails Tutorial Sample App | About Us")
+    end
+
+    scenario "right content" do
+      visit "/static_pages/about"
+      expect(page).to have_content('About Us')
+    end
   end
 end
