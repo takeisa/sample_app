@@ -38,7 +38,16 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'rspec-rails', group: [:development, :test]
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'libnotify'
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
+end
+
+
 gem 'selenium-webdriver', group: :test
 gem 'capybara', group: :test
 
